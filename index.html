@@ -11,9 +11,13 @@
       }
     body {
       max-width: 1131px;
-      padding: 3em .75em;
+      padding: 1.5em .75em;
       margin: 0 auto;
       font: normal 100%/1.2 'Comic Sans MS';
+      }
+    .badges {
+      margin-bottom: 1em;
+      text-align: center;
       }
     .doge {
       width: 100%;
@@ -49,15 +53,19 @@
 </head>
 <body>
 
+  <div class="badges">
+    <iframe src="http://ghbtns.com/github-btn.html?user=herschel666&amp;repo=NeverGonnaResize.js&amp;type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+    <iframe src="http://ghbtns.com/github-btn.html?user=herschel666&amp;repo=NeverGonnaResize.js&amp;type=star" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+  </div>
   <div class="doge">
     <span class="doge__says doge__says--lorem">so responsive</span>
     <span class="doge__says doge__says--ipsum">such media queries</span>
     <span class="doge__says doge__says--dolor">wow!</span>
   </div>
 
-  <script src="../src/never-gonna-resize.js"></script>
+  <script src="./scripts/never-gonna-resize.js"></script>
   <script>
-    neverGonnaResize('../mp3/hodor.mp3');
+    neverGonnaResize('./mp3/hodor.mp3');
   </script>
 
 </body>
