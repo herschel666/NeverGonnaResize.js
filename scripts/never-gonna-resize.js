@@ -27,6 +27,7 @@
       gainNode = audioCtx.createGain();
 
       source.buffer = buffer;
+      source.loop = true;
       gainNode.gain.value = 0;
       filter.gain.value = 15;
       filter.Q.value = 10;
