@@ -1,7 +1,7 @@
 /**
- * NeverGonnaResize.js - v0.0.1
+ * NeverGonnaResize.js - v0.0.2
  *
- * Emanuel Kluge - 2014-02-04
+ * Emanuel Kluge - 2014-02-15
  *
  * https://github.com/herschel666/NeverGonnaResize.js
  *
@@ -36,17 +36,17 @@
       filter.connect(gainNode);
       gainNode.connect(audioCtx.destination);
 
-      source.start();
+      source.start(0);
 
-      win.addEventListener('resize', onResize);
+      win.addEventListener('resize', onResizing);
 
     });
   }
 
-  function onResize() {
+  function onResizing() {
 
     filter.frequency.value = Math.floor(getFrequency(win.innerWidth));
-    gainNode.gain.value = .4;
+    gainNode.gain.value = .6;
 
     if ( timeoutId ) {
       clearTimeout(timeoutId);
@@ -62,7 +62,7 @@
   function getFrequency(winWidth) {
 
     var factor = (winWidth - MIN_WIDTH) / (MAX_WIDTH - MIN_WIDTH),
-        range = 5000 - filter.frequency.minValue,
+        range = 5000 - (filter.frequency.minValue || 20),
         result;
 
     if ( factor < 0 ) {
